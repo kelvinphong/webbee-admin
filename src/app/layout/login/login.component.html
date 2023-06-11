@@ -1,0 +1,58 @@
+<div class="main-container d-flex w-100">
+    <section class="auth-sidebar">
+        <div class="auth-sidebar-content h-100">
+            <div class="artwork"></div>
+        </div>
+    </section>
+    <section id="auth-content">
+        <div class="container w-100 h-100 flex-column flex-center">
+            <div class="auth-content w-100">
+                <h2 class="title">Welcome</h2>
+                <p class="text-secondary">Log in your account!</p>
+                <div class="auth-form" [formGroup]="form">
+                    <div class="form-group">
+                        <fieldset>
+                            <label for="email">Your Email</label>
+                            <input formControlName="email" type="text" name="email" id="email">
+                            <!-- <div *ngIf="form.get('email')?.invalid" class="error-text">test</div> -->
+                        </fieldset>
+                    </div>
+                    <div class="form-group">
+                        <fieldset>
+                            <label for="password">Password</label>
+                            <div class="position-relative">
+                                <input formControlName="password" [type]="showPassword ? 'text' : 'password'" name="password" id="password">
+                                <ng-container *ngIf="form?.get('password')?.value">
+                                    <img *ngIf="!showPassword" class="show-password img-fluid" width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/000000/visible.png" alt="visible" (click)="togglePassword()" />
+                                    <img *ngIf="showPassword" class="show-password img-fluid" width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/000000/hide.png" alt="hide" (click)="togglePassword()" />
+                                </ng-container>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="auth-option flex-between">
+                        <div class="d-flex align-items-center gap-5">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember" class="m-0">Remember Me</label>
+                        </div>
+                        <a class="forgot-pass d-block text-secondary">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 f-600">Login</button>
+                    <hr class="divider text-center" />
+                </div>
+                <div class="auth-connections d-flex align-items-center">
+                    <div class="connections-box d-flex align-items-center gap-5">
+                        <img width="48" height="48" src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google-logo"/>
+                        <span class="text-secondary">Continue with Google</span>
+                    </div>
+                    <div class="connections-box d-flex align-items-center gap-5">
+                        <img width="48" height="48" src="https://img.icons8.com/fluency/48/000000/facebook.png" alt="facebook"/>
+                        <span class="text-secondary">Continue with Facebook</span>
+                    </div>
+                </div>
+                <div class="auth-register text-secondary text-center">
+                    Don't have ant account?<a class="text-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
