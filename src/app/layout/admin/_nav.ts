@@ -1,27 +1,20 @@
-interface INavData {
-  name: string,
-  url?: string,
-  icon?: string,
-  title?: boolean,
-  badge?: any;
-  children?: INavData[],
-  attributes?: any,
-  class?: string;
-}
+import { INavData } from '@coreui/angular';
 export const navItems: INavData[] = [
   {
     name: 'Dashboard',
     url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    iconComponent: { name: 'cil-speedometer' }
+  },
+  {
+    name: 'Account',
+    url: '/profile',
+    iconComponent: { name: 'cil-user' }
   },
   {
     title: true,
     name: 'Theme'
   },
+  
   {
     name: 'Colors',
     url: '/theme/colors',
@@ -141,7 +134,7 @@ export const navItems: INavData[] = [
         url: '/icons/coreui-icons',
         icon: 'icon-star',
         badge: {
-          variant: 'success',
+          color: 'success',
           text: 'NEW'
         }
       },
@@ -155,7 +148,7 @@ export const navItems: INavData[] = [
         url: '/icons/font-awesome',
         icon: 'icon-star',
         badge: {
-          variant: 'secondary',
+          color: 'secondary',
           text: '4.7'
         }
       },
@@ -193,7 +186,7 @@ export const navItems: INavData[] = [
     url: '/widgets',
     icon: 'icon-calculator',
     badge: {
-      variant: 'info',
+      color: 'info',
       text: 'NEW'
     }
   },
@@ -233,7 +226,7 @@ export const navItems: INavData[] = [
     url: '/dashboard',
     icon: 'icon-ban',
     badge: {
-      variant: 'secondary',
+      color: 'secondary',
       text: 'NEW'
     },
     attributes: { disabled: true },

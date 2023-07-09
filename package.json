@@ -23,6 +23,7 @@
     "@coreui/coreui": "~4.2.6",
     "@coreui/icons": "^2.1.0",
     "@coreui/icons-angular": "~4.2.35",
+    "ngx-perfect-scrollbar": "^10.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
